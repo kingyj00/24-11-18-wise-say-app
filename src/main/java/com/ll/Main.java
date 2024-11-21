@@ -15,7 +15,6 @@ class App {
         Scanner scanner = new Scanner(System.in);
         int lastId = 0;
 
-        WiseSaying lastWiseSaying = null;
         WiseSaying[] wiseSayings = new WiseSaying[10];
         int wiseSayingSize = 0;
 
@@ -31,7 +30,6 @@ class App {
                 int id = ++lastId;
 
                 WiseSaying wiseSaying = new WiseSaying(id, content, author);
-                lastWiseSaying = wiseSaying;
 
                 wiseSayings[wiseSayingSize] = wiseSaying;
                 wiseSayingSize++;
@@ -43,12 +41,11 @@ class App {
                 System.out.println("번호/ 작가 / 명언");
                 System.out.println("-----------------------");
 
-                int i = 0;
-
-                while ( i < wiseSayingSize ) {
+                for ( int i = 0; i < wiseSayingSize; i++ ) {
                     WiseSaying wiseSaying = wiseSayings[i];
                     System.out.println("%d / %s / %s".formatted(wiseSaying.id, wiseSaying.author, wiseSaying.content));
-                    i++;
+
+                    //while과 for는 같은 반복문이다. for를 쓰는 이유는 가독성이 좋아서.
                 }
             }
         }
