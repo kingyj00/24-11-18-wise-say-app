@@ -1,5 +1,6 @@
 package com.ll;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
@@ -35,6 +36,8 @@ class App {
 
                 wiseSayings[wiseSayingSize] = wiseSaying;
                 wiseSayingSize++;
+
+                System.out.println(Arrays.toString(wiseSayings)); // 그냥외우기 배열을 오버라이드하는법
 
                 System.out.println("%d번 명언이 등록되었습니다.".formatted(id));
             } else if (cmd.equals("목록")) {
