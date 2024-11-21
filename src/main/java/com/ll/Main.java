@@ -29,6 +29,7 @@ class App {
 
                 WiseSaying wiseSaying = new WiseSaying(id, content, author);
 
+                System.out.println(wiseSaying);
 
                 lastWiseSaying = wiseSaying;
 
@@ -54,5 +55,10 @@ class WiseSaying {
         this.id=id;
         this.content=content;
         this.author=author;
+    }
+
+    @Override
+    public String toString() {
+        return "WiseSaying (id=%d, content=%s, author=%s)".formatted(id, content, author);
     }
 }
