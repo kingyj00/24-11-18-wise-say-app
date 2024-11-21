@@ -37,8 +37,15 @@ class App {
             } else if (cmd.equals("목록")) {
                 System.out.println("번호/ 작가 / 명언");
                 System.out.println("-----------------------");
-                System.out.println("%d / %s / %s".formatted(lastWiseSaying.id, lastWiseSaying.author, lastWiseSaying.content));
 
+                try {
+
+
+                    System.out.println("%d / %s / %s".formatted(lastWiseSaying.id, lastWiseSaying.author, lastWiseSaying.content));
+                }
+                catch (NullPointerException e) {
+                    System.out.println("등록된 명언이 없습니다.");
+                }
             }
 
         }
