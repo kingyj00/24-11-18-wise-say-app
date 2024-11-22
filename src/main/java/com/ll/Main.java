@@ -41,8 +41,8 @@ class App {
                 System.out.println("번호/ 작가 / 명언");
                 System.out.println("-----------------------");
 
-                for ( int i = 0; i < wiseSayingSize; i++ ) {
-                    WiseSaying wiseSaying = wiseSayings[i];
+                for (WiseSaying wiseSaying : wiseSayings) {
+                    if ( wiseSaying == null) break;
                     System.out.println("%d / %s / %s".formatted(wiseSaying.id, wiseSaying.author, wiseSaying.content));
 
                     //while과 for는 같은 반복문이다. for를 쓰는 이유는 가독성이 좋아서.
