@@ -19,8 +19,7 @@ public class App {
     public void run() {
         System.out.println("== 명언 앱 ==");
 
-        addWiseSaying("나의 죽음을 알리지 마라.", "이순신");
-        addWiseSaying("악법도 법이다.", "소크라테스");
+       makeSampleData();
 
         while (true) {
             System.out.print("명령 : ");
@@ -35,13 +34,17 @@ public class App {
         scanner.close();
     }
 
+    private void makeSampleData() {
+        addWiseSaying("나의 죽음을 알리지 마라.", "이순신");
+        addWiseSaying("악법도 법이다.", "소크라테스");
+    }
+
     private WiseSaying addWiseSaying(String content, String author){
         int id = ++lastId;
 
         WiseSaying wiseSaying = new WiseSaying(id, content, author);
 
         wiseSayings.add(wiseSaying);
-        System.out.println("wiseSayings = " + wiseSayings);
 
         return wiseSaying;
     }
