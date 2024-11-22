@@ -74,7 +74,9 @@ public class App {
     }
 
     private void actionDelete(int id ){
-        boolean removed = wiseSayings.removeIf(wiseSaying -> wiseSaying.getId() == id);
+        boolean removed = wiseSayings.removeIf(
+                (WiseSaying w) -> w.getId() == 3
+                        );
 
         if (removed) System.out.println("%d번 명언을 삭제했습니다.".formatted(id));
     }
