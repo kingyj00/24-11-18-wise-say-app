@@ -3,9 +3,9 @@ package com.ll;
 import java.util.Scanner;
 
 public class App {
-    private Scanner scanner;
+    private final Scanner scanner;
     private int lastId;
-    private WiseSaying[] wiseSayings;
+    private final WiseSaying[] wiseSayings;
     private int wiseSayingSize;
 
     public App(){
@@ -23,7 +23,7 @@ public class App {
 
         while (true) {
             System.out.print("명령 : ");
-            String cmd = scanner.nextLine();
+            final String cmd = scanner.nextLine();
             if (cmd.equals("종료")) break;
             else if (cmd.equals("등록")) {
                 actionAdd() ;

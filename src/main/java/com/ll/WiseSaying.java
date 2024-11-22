@@ -1,9 +1,9 @@
 package com.ll;
 
 public class WiseSaying {
-    int id;
-    String content;
-    String author;
+    public final int id;
+    public String content;
+    public String author;
 
     WiseSaying(int id, String content, String author) {
         this.id = id;
