@@ -2,7 +2,7 @@ package com.ll;
 
 import java.util.Scanner;
 
-class App {
+public class App {
     private Scanner scanner;
     private int lastId;
     private WiseSaying[] wiseSayings;
