@@ -29,8 +29,10 @@ public class App {
                 actionAdd() ;
             } else if (cmd.equals("목록")) {
                 actionList();
-            } else if (cmd.equals("삭제?id=1")) {
-                actionDelete(1);
+            } else if (cmd.startsWith("삭제")) {
+                String idStr = cmd.substring(6);
+                int id = Integer.parseInt(idStr); //이건 그냥외워야함
+                actionDelete(id);
             }
         }
         scanner.close();
@@ -75,8 +77,7 @@ public class App {
 
     private void actionDelete(int id ){
         boolean removed = wiseSayings.removeIf(
-                (WiseSaying w) -> w.getId() == 3
-                        );
+                (wiseSaying ) -> wiseSaying.getId() == id);
 
         if (removed) System.out.println("%d번 명언을 삭제했습니다.".formatted(id));
     }
