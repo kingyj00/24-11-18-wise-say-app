@@ -66,10 +66,10 @@ public class App {
         System.out.println("번호/ 작가 / 명언");
         System.out.println("-----------------------");
 
-        for (WiseSaying wiseSaying : wiseSayings) {
-            if ( wiseSaying == null) break;
-            System.out.println("%d / %s / %s".formatted(wiseSaying.getId(), wiseSaying.getAuthor(), wiseSaying.getContent()));
-            //while과 for는 같은 반복문이다. for를 쓰는 이유는 가독성이 좋아서.
+        for ( int i = wiseSayings.size() - 1; i >=0; i--){
+            WiseSaying wiseSaying = wiseSayings.get(i);
+
+            System.out.println("%d. %s / %s".formatted(wiseSaying.getId(), wiseSaying.getAuthor(), wiseSaying.getContent()));
         }
     }
 }
