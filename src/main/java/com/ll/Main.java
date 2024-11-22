@@ -31,15 +31,7 @@ class App {
             else if (cmd.equals("등록")) {
                 actionAdd() ;
             } else if (cmd.equals("목록")) {
-                System.out.println("번호/ 작가 / 명언");
-                System.out.println("-----------------------");
-
-                for (WiseSaying wiseSaying : wiseSayings) {
-                    if ( wiseSaying == null) break;
-                    System.out.println("%d / %s / %s".formatted(wiseSaying.id, wiseSaying.author, wiseSaying.content));
-
-                    //while과 for는 같은 반복문이다. for를 쓰는 이유는 가독성이 좋아서.
-                }
+                actionList();
             }
         }
         scanner.close();
@@ -60,6 +52,17 @@ class App {
         //System.out.println(Arrays.toString(wiseSayings)); // 그냥외우기 배열을 오버라이드하는법
 
         System.out.println("%d번 명언이 등록되었습니다.".formatted(id));
+    }
+
+    void actionList(){
+        System.out.println("번호/ 작가 / 명언");
+        System.out.println("-----------------------");
+
+        for (WiseSaying wiseSaying : wiseSayings) {
+            if ( wiseSaying == null) break;
+            System.out.println("%d / %s / %s".formatted(wiseSaying.id, wiseSaying.author, wiseSaying.content));
+            //while과 for는 같은 반복문이다. for를 쓰는 이유는 가독성이 좋아서.
+        }
     }
 }
 
