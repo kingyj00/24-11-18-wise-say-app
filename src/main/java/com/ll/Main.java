@@ -24,6 +24,13 @@ class App {
     public void run() {
         System.out.println("== 명언 앱 ==");
 
+        int id = ++lastId;
+
+        WiseSaying wiseSaying = new WiseSaying(id, "샘플 1", "작가1");
+
+        wiseSayings[wiseSayingSize] = wiseSaying;
+        wiseSayingSize++;
+
         while (true) {
             System.out.print("명령 : ");
             String cmd = scanner.nextLine();
