@@ -1,18 +1,19 @@
 package com.ll;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class App {
     private final Scanner scanner;
     private int lastId;
-    private final WiseSaying[] wiseSayings;
+    private final List<WiseSaying> wiseSayings;
     private int wiseSayingSize;
 
     public App(){
         scanner = new Scanner(System.in);
         lastId = 0;
-        wiseSayings = new WiseSaying[10];
-        wiseSayingSize = 0;
+        wiseSayings = new ArrayList<>();
     }
 
     public void run() {
@@ -39,8 +40,8 @@ public class App {
 
         WiseSaying wiseSaying = new WiseSaying(id, content, author);
 
-        wiseSayings[wiseSayingSize] = wiseSaying;
-        wiseSayingSize++;
+        wiseSayings.add(wiseSaying);
+        System.out.println("wiseSayings = " + wiseSayings);
 
         return wiseSaying;
     }
