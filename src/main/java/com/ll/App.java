@@ -55,7 +55,7 @@ public class App {
 
         //System.out.println(Arrays.toString(wiseSayings)); // 그냥외우기 배열을 오버라이드하는법
 
-        System.out.println("%d번 명언이 등록되었습니다.".formatted(wiseSaying.id));
+        System.out.println("%d번 명언이 등록되었습니다.".formatted(wiseSaying.getId()));
     }
 
     private void actionList(){
@@ -64,7 +64,7 @@ public class App {
 
         for (WiseSaying wiseSaying : wiseSayings) {
             if ( wiseSaying == null) break;
-            System.out.println("%d / %s / %s".formatted(wiseSaying.id, wiseSaying.author, wiseSaying.content));
+            System.out.println("%d / %s / %s".formatted(wiseSaying.getId(), wiseSaying.getAuthor(), wiseSaying.getContent()));
             //while과 for는 같은 반복문이다. for를 쓰는 이유는 가독성이 좋아서.
         }
     }
