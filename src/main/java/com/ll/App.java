@@ -80,5 +80,6 @@ public class App {
                 (wiseSaying ) -> wiseSaying.getId() == id);
 
         if (removed) System.out.println("%d번 명언을 삭제했습니다.".formatted(id));
+        else System.out.println("%d번 명언은 등록되지 않았습니다.".formatted(id));
     }
 }
