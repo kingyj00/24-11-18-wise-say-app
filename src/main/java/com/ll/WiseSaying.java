@@ -5,7 +5,7 @@ public class WiseSaying {
     private String content;
     private String author;
 
-    WiseSaying(int id, String content, String author) {
+    public WiseSaying(int id, String content, String author) {
         this.id = id;
         this.content = content;
         this.author = author;
@@ -20,15 +20,17 @@ public class WiseSaying {
     public String getAuthor() {
         return author;
     }
+
     public void setContent(String content) {
-        this.content = content;
+        this.content= content;
     }
+
     public void setAuthor(String author) {
         this.author = author;
     }
 
     @Override
     public String toString() {
-        return "WiseSaying (id=%d, content=%s, author=%s)".formatted(id, content, author);
+        return "WiseSaying (id=%d, content=\"%s\", author=\"%s\")".formatted(id, content, author);
     }
 }
