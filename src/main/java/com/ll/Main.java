@@ -25,6 +25,7 @@ class App {
                 String content = scanner.nextLine();
                 System.out.print("작가 :");
                 String author = scanner.nextLine();
+                System.out.println("1번 명언이 등록되었습니다."); //1번이라고 문자로 나타나기만함 변화x
             }
         }
         scanner.close();
