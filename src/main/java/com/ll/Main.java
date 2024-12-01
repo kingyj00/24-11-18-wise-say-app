@@ -37,6 +37,21 @@ class App {
                 for (int i = wiseSayings.size() - 1; i >=0; i--) {
                     System.out.println(wiseSayings.get(i));
                 }
+            } else if (cmd.equals("삭제")) {
+                System.out.println("삭제할 번호 : ");
+                int deleteId = Integer.parseInt(scanner.nextLine());
+                boolean found = false;
+                for (int i = 0; i < wiseSayings.size(); i++) {
+                    if (wiseSayings.get(i).startsWith(deleteId + "/")){
+                        wiseSayings.remove(i);
+                        System.out.println("%d번 명언이 삭제되었습니다.".formatted(deleteId));
+                        found = true;
+                        break;
+                    }
+                }
+                if (!found) {
+                    System.out.println("해당 번호에 명언이 없는디?");
+                }
             }
         }
         scanner.close();
