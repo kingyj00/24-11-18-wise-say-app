@@ -71,6 +71,32 @@ class App {
                         wiseSayings.get(i).id = i + 1;
                     }
                 }
+            } else if (cmd.equals("수정")) {
+                // 명언 수정
+                System.out.print("수정할 번호 : ");
+                int updateId = Integer.parseInt(scanner.nextLine());
+                boolean found = false;
+
+                // 수정할 명언 찾기
+                for (int i = 0; i < wiseSayings.size(); i++) {
+                    if (wiseSayings.get(i).id == updateId) {
+                        // 수정할 명언의 내용과 작가를 입력받음
+                        System.out.print("새로운 명언 : ");
+                        String newContent = scanner.nextLine();
+                        System.out.print("새로운 작가 : ");
+                        String newAuthor = scanner.nextLine();
+
+                        // 수정된 내용으로 업데이트
+                        wiseSayings.get(i).content = newContent;
+                        wiseSayings.get(i).author = newAuthor;
+                        System.out.println("%d번 명언이 수정되었습니다.".formatted(updateId));
+                        found = true;
+                        break;
+                    }
+                }
+                if (!found) {
+                    System.out.println("해당 번호에 명언이 없는디?");
+                }
             }
         }
         scanner.close();
