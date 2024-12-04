@@ -1,104 +1,42 @@
 package com.ll;
 
-import java.util.ArrayList;
+// Java 프로그램을 만들기 위해 필요한 Scanner라는 도구를 가져옴
 import java.util.Scanner;
 
+// 프로그램의 시작점(Main 클래스) 선언
 public class Main {
-    public static void main( String[] args){
+    // 프로그램이 시작되면 실행되는 메인 메서드
+    public static void main(String[] args) {
+        // App이라는 클래스의 객체(인스턴스)를 만듦
         App app = new App();
+        // App 클래스에 있는 run()이라는 기능(메서드)을 실행함
         app.run();
     }
 }
 
-class WiseSaying {
-    int id;
-    String content;
-    String author;
-
-    //생정자 자동 생성 class WiseSaying -> 제너레이트
-    public WiseSaying(int id, String content, String author) {
-        this.id = id;
-        this.content = content;
-        this.author = author;
-    }
-}
-
+// 실제로 앱의 동작을 정의하는 클래스(App 클래스) 선언
 class App {
+    // 앱의 핵심 기능을 실행하는 메서드(run) 정의
     public void run() {
-        System.out.println(" 명 언 앱 을 켰 구 만");
-        Scanner scanner = new Scanner(System.in);
-        int lastId = 0;
-        ArrayList<WiseSaying> wiseSayings = new ArrayList<>();
+        // "명언 앱"이라는 문구를 화면에 출력
+        System.out.println("명언 앱");
 
+        // 사용자 입력을 받기 위한 Scanner 도구를 준비
+        Scanner scanner = new Scanner(System.in);
+
+        // 무한 반복문을 시작
         while (true) {
-            System.out.print(" 입력 : ");
+            // 사용자에게 "명령 :"이라는 문구를 보여줌
+            System.out.print("명령 :");
+
+            // 사용자가 입력한 문장을 읽어와 cmd라는 변수에 저장
             String cmd = scanner.nextLine();
 
-            if (cmd.equals("종료")) {
-                break;
-            } else if (cmd.equals("등록")) {
-                System.out.print(" 명언 : ");
-                String content = scanner.nextLine();
-                System.out.print(" 작가 : ");
-                String author = scanner.nextLine();
-                int id = wiseSayings.size() + 1;
-                wiseSayings.add(new WiseSaying(id, content, author));
-                System.out.println(" %d번에 명언이 등록되었습니다.".formatted(id));
-            } else if (cmd.equals("목록")) {
-                System.out.println("번호 / 작가 / 명언");
-                System.out.println("===================");
-                for (int i = wiseSayings.size() - 1; i >= 0; i--) {
-                    WiseSaying wiseSaying = wiseSayings.get(i);
-                    System.out.println("%d / %s / %s".formatted(wiseSaying.id, wiseSaying.author, wiseSaying.content));
-                }
-            } else if (cmd.equals("삭제")) {
-                System.out.print("삭제할 번호 : ");
-                int deleteId = Integer.parseInt(scanner.nextLine());
-                boolean found = false;
-
-                for (int i = 0; i < wiseSayings.size(); i++) {
-                    if (wiseSayings.get(i).id == deleteId) {
-                        wiseSayings.remove(i);
-                        System.out.println("%d번 명언이 삭제되었습니다.".formatted(deleteId));
-                        found = true;
-                        break;
-                    }
-                }
-                if (!found) {
-                    System.out.println("해당 번호에 명언이 없는디?");
-                } else {
-                    for (int i = 0; i < wiseSayings.size(); i++) {
-                        wiseSayings.get(i).id = i + 1;
-                    }
-                }
-            } else if (cmd.equals("수정")) {
-                // 명언 수정
-                System.out.print("수정할 번호 : ");
-                int updateId = Integer.parseInt(scanner.nextLine());
-                boolean found = false;
-
-                // 수정할 명언 찾기
-                for (int i = 0; i < wiseSayings.size(); i++) {
-                    if (wiseSayings.get(i).id == updateId) {
-                        // 수정할 명언의 내용과 작가를 입력받음
-                        System.out.print("새로운 명언 : ");
-                        String newContent = scanner.nextLine();
-                        System.out.print("새로운 작가 : ");
-                        String newAuthor = scanner.nextLine();
-
-                        // 수정된 내용으로 업데이트
-                        wiseSayings.get(i).content = newContent;
-                        wiseSayings.get(i).author = newAuthor;
-                        System.out.println("%d번 명언이 수정되었습니다.".formatted(updateId));
-                        found = true;
-                        break;
-                    }
-                }
-                if (!found) {
-                    System.out.println("해당 번호에 명언이 없는디?");
-                }
-            }
+            // 사용자가 입력한 값(cmd)이 "종료"라면 반복문을 멈춤
+            if (cmd.equals("종료")) break;
         }
+
+        // 더 이상 입력을 받지 않을 것이므로 Scanner를 닫음
         scanner.close();
     }
 }
