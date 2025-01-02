@@ -11,7 +11,7 @@ public class Main {
 
 class App {
     public void run() {
-        System.out.println("명언 앱_6rd.");
+        System.out.println("명언앱");
         Scanner scanner = new Scanner(System.in);
 
         while (true) {
